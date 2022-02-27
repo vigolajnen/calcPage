@@ -1,0 +1,20 @@
+form.row-cols-1.pt-2.pb-2(id="js-form")
+  label.form-label.mb-3.col
+    span Дата начала договора
+    input.form-control.mt-2(type="date" id="beginningDate" required)
+  label.form-label.mb-3.col
+    span Стоимость договора
+    input.form-control.mt-2(id="price" placeholder="0" required)
+  label.form-label.mb-3.col
+    span Количество дней по договору
+    input.form-control.mt-2(id="countDays" placeholder="0" required)
+  label.form-label.mb-3.col
+    span Всего визитов по договору
+    input.form-control.mt-2(id="countVisits" placeholder="0" required)
+
+  label.form-label.mb-3.col
+    span Использованно визитов по договору
+    input.form-control.mt-2(id="countUsedVisits" placeholder="0" required)
+
+
+  button.btn.btn-primary(type="submit") Расчитать

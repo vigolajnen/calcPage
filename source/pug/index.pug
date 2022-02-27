@@ -1,0 +1,33 @@
+//- index.pug
+doctype html
+html(lang="ru")
+  include includes/main/_head.pug
+  body.page
+    .container.pt-4.pb-4.overflow-hidden
+      h1.h2 Расчет суммы возврата договора
+      .row.gx-5
+        .row-cols-1.col-sm-6.col-md-4.pt-4
+          h2.h3 Исходные данные
+          p Введите данные для расчета
+          include includes/main/_form.pug
+
+        .row-cols-1.col-sm-6.col-md-8.pt-4
+          h2.h3 Данные по возврату
+
+          .row-cols-1.p-5.mt-5.border.bg-light
+            .mb-3.col
+              h3.h5 Дата окончания договора:
+                span#resultDate.d-inline-flex.p-2.pt-0.pb-0 0
+            .mb-3.col
+              h3.h5 Остаток дней:
+                span#resultDays.d-inline-flex.p-2.pt-0.pb-0 0
+            .mb-3.col
+              h3.h5 Остаток визитов:
+                span#resultVisits.d-inline-flex.p-2.pt-0.pb-0 0
+            .mb-3.mt-5.col
+              h3.h5 Сумма к возврату:
+                span#result.d-inline-flex.p-2.pt-0.pb-0 0
+
+
+
+    include includes/main/_scripts.pug

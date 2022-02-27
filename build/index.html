@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Магазин готовых шаблонов</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Магазин готовых шаблонов">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicons/180.png">
+    <link rel="manifest" href="manifest.webmanifest">
+  </head>
+  <body class="page">
+    <div class="container pt-4 pb-4 overflow-hidden">
+      <h1 class="h2">Расчет суммы возврата договора</h1>
+      <div class="row gx-5">
+        <div class="row-cols-1 col-sm-6 col-md-4 pt-4">
+          <h2 class="h3">Исходные данные</h2>
+          <p>Введите данные для расчета</p>
+          <form class="row-cols-1 pt-2 pb-2" id="js-form">
+            <label class="form-label mb-3 col"><span>Дата начала договора</span>
+              <input class="form-control mt-2" type="date" id="beginningDate" required>
+            </label>
+            <label class="form-label mb-3 col"><span>Стоимость договора</span>
+              <input class="form-control mt-2" id="price" placeholder="0" required>
+            </label>
+            <label class="form-label mb-3 col"><span>Количество дней по договору</span>
+              <input class="form-control mt-2" id="countDays" placeholder="0" required>
+            </label>
+            <label class="form-label mb-3 col"><span>Всего визитов по договору</span>
+              <input class="form-control mt-2" id="countVisits" placeholder="0" required>
+            </label>
+            <label class="form-label mb-3 col"><span>Использованно визитов по договору</span>
+              <input class="form-control mt-2" id="countUsedVisits" placeholder="0" required>
+            </label>
+            <button class="btn btn-primary" type="submit">Расчитать</button>
+          </form>
+        </div>
+        <div class="row-cols-1 col-sm-6 col-md-8 pt-4">
+          <h2 class="h3">Данные по возврату</h2>
+          <div class="row-cols-1 p-5 mt-5 border bg-light">
+            <div class="mb-3 col">
+              <h3 class="h5">Дата окончания договора:<span class="d-inline-flex p-2 pt-0 pb-0" id="resultDate">0</span></h3>
+            </div>
+            <div class="mb-3 col">
+              <h3 class="h5">Остаток дней:<span class="d-inline-flex p-2 pt-0 pb-0" id="resultDays">0</span></h3>
+            </div>
+            <div class="mb-3 col">
+              <h3 class="h5">Остаток визитов:<span class="d-inline-flex p-2 pt-0 pb-0" id="resultVisits">0</span></h3>
+            </div>
+            <div class="mb-3 mt-5 col">
+              <h3 class="h5">Сумма к возврату:<span class="d-inline-flex p-2 pt-0 pb-0" id="result">0</span></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/libs.min.js"></script>
+    <script src="js/script.min.js" type="module"></script>
+  </body>
+</html>
