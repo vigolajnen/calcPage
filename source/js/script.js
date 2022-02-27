@@ -9,9 +9,6 @@ const resultDaysCount = document.querySelector("#resultDays");
 const resultVisitsCount = document.querySelector("#resultVisits");
 const result = document.querySelector("#result");
 
-// использовано 37 дней, 32 визита;
-
-
 const getResultDate = () => {
   const count = +daysCount.value;
   const newDate = new Date(formDate.value);
@@ -19,22 +16,30 @@ const getResultDate = () => {
   return newDate.toLocaleDateString();
 }
 
-const getResultDays = (days, date) => {
+let getResultDays = (days, date) => {
   const now = new Date();
   const count = +days;
   const milliseconds = now - date;
   const seconds = milliseconds / 1000;
   const minutes = seconds / 60;
   const hours = minutes / 60;
-  const resultDays = Math.ceil(count - hours / 24);
-  if (resultDays <= 0) resultDays = 0;
-  return resultDays;
+  let resultDays = Math.ceil(count - hours / 24);
+
+  if (resultDays <= 0) {
+    return resultDays = 0;
+  } else {
+    return resultDays;
+  }
+
 };
 
+const getResultPrice = (price, days) => {
+  const result = (price / days) * resultDays.value;
+  return result;
+};
 
 daysCount.addEventListener("change", (evt) => {
   evt.preventDefault();
-
   resultDaysCount.innerText = 0;
 });
 
@@ -49,12 +54,8 @@ form.addEventListener('submit', (evt) => {
   resultVisitsCount.innerText = visitsCount.value - countUsedVisits.value;
   result.innerText =
     (formPrice.value / daysCount.value) *
-    getResultDays(daysCount.value, new Date(formDate.value));;
+    getResultDays(daysCount.value, new Date(formDate.value));
 
 
-  console.log(formDate.value);
-  console.log(formPrice.value);
-  console.log(daysCount.value);
-  console.log(visitsCount.value);
-
+  console.log(getResultPrice(formPrice.value, daysCount.value));
 });

@@ -1,20 +1,22 @@
-form.row-cols-1.pt-2.pb-2(id="js-form")
-  label.form-label.mb-3.col
+form.row.pt-2.pb-2(id="js-form")
+  .mb-3.col-12.col-12.col-sm-6.col-md-12.col-lg-6
+    .form-check.pt-4
+      input(class="form-check-input" type="checkbox" id="flexCheckDefault")
+      label(class="form-check-label" for="flexCheckDefault") Безлимитный договор
+  label.form-label.mb-3.col-12.col-sm-6.col-md-12.col-lg-6
     span Дата начала договора
     input.form-control.mt-2(type="date" id="beginningDate" required)
-  label.form-label.mb-3.col
+  label.form-label.mb-3.col-12.col-sm-6.col-md-12.col-lg-6
     span Стоимость договора
     input.form-control.mt-2(id="price" placeholder="0" required)
-  label.form-label.mb-3.col
-    span Количество дней по договору
+  label.form-label.mb-3.col-12.col-sm-6.col-md-12.col-lg-6
+    span Количество дней
     input.form-control.mt-2(id="countDays" placeholder="0" required)
-  label.form-label.mb-3.col
-    span Всего визитов по договору
-    input.form-control.mt-2(id="countVisits" placeholder="0" required)
+  label.form-label.mb-3.col-12.col-sm-6.col-md-12.col-lg-6
+    span Всего визитов
+    input.form-control.mt-2(id="countVisits" placeholder="0" )
+  label.form-label.mb-3.col-12.col-sm-6.col-md-12.col-lg-6
+    span Использованно визитов
+    input.form-control.mt-2(id="countUsedVisits" placeholder="0" )
 
-  label.form-label.mb-3.col
-    span Использованно визитов по договору
-    input.form-control.mt-2(id="countUsedVisits" placeholder="0" required)
-
-
-  button.btn.btn-primary(type="submit") Расчитать
+  button.btn.btn-primary(type="submit") Рассчитать

@@ -51,7 +51,6 @@ exports.htmlPug = htmlPug;
 const scripts = () => {
   return gulp
     .src("source/js/script.js")
-    .pipe(terser())
     .pipe(rename("script.min.js"))
     .pipe(gulp.dest("build/js"))
     .pipe(sync.stream());

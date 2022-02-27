@@ -13,34 +13,40 @@
     <link rel="manifest" href="manifest.webmanifest">
   </head>
   <body class="page">
-    <div class="container pt-4 pb-4 overflow-hidden">
+    <div class="container pt-4 pb-4">
       <h1 class="h2">Расчет суммы возврата договора</h1>
-      <div class="row gx-5">
-        <div class="row-cols-1 col-sm-6 col-md-4 pt-4">
+      <div class="row">
+        <div class="col-md-6 pt-4">
           <h2 class="h3">Исходные данные</h2>
           <p>Введите данные для расчета</p>
-          <form class="row-cols-1 pt-2 pb-2" id="js-form">
-            <label class="form-label mb-3 col"><span>Дата начала договора</span>
+          <form class="row pt-2 pb-2" id="js-form">
+            <div class="mb-3 col-12 col-12 col-sm-6 col-md-12 col-lg-6">
+              <div class="form-check pt-4">
+                <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">Безлимитный договор</label>
+              </div>
+            </div>
+            <label class="form-label mb-3 col-12 col-sm-6 col-md-12 col-lg-6"><span>Дата начала договора</span>
               <input class="form-control mt-2" type="date" id="beginningDate" required>
             </label>
-            <label class="form-label mb-3 col"><span>Стоимость договора</span>
+            <label class="form-label mb-3 col-12 col-sm-6 col-md-12 col-lg-6"><span>Стоимость договора</span>
               <input class="form-control mt-2" id="price" placeholder="0" required>
             </label>
-            <label class="form-label mb-3 col"><span>Количество дней по договору</span>
+            <label class="form-label mb-3 col-12 col-sm-6 col-md-12 col-lg-6"><span>Количество дней</span>
               <input class="form-control mt-2" id="countDays" placeholder="0" required>
             </label>
-            <label class="form-label mb-3 col"><span>Всего визитов по договору</span>
-              <input class="form-control mt-2" id="countVisits" placeholder="0" required>
+            <label class="form-label mb-3 col-12 col-sm-6 col-md-12 col-lg-6"><span>Всего визитов</span>
+              <input class="form-control mt-2" id="countVisits" placeholder="0">
             </label>
-            <label class="form-label mb-3 col"><span>Использованно визитов по договору</span>
-              <input class="form-control mt-2" id="countUsedVisits" placeholder="0" required>
+            <label class="form-label mb-3 col-12 col-sm-6 col-md-12 col-lg-6"><span>Использованно визитов</span>
+              <input class="form-control mt-2" id="countUsedVisits" placeholder="0">
             </label>
-            <button class="btn btn-primary" type="submit">Расчитать</button>
+            <button class="btn btn-primary" type="submit">Рассчитать</button>
           </form>
         </div>
-        <div class="row-cols-1 col-sm-6 col-md-8 pt-4">
+        <div class="col-md-6 pt-4">
           <h2 class="h3">Данные по возврату</h2>
-          <div class="row-cols-1 p-5 mt-5 border bg-light">
+          <div class="p-4 mt-5 border bg-light">
             <div class="mb-3 col">
               <h3 class="h5">Дата окончания договора:<span class="d-inline-flex p-2 pt-0 pb-0" id="resultDate">0</span></h3>
             </div>
