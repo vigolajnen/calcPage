@@ -14,7 +14,7 @@ const getResultDate = () => {
   const newDate = new Date(formDate.value);
   newDate.setDate(newDate.getDate() + count - 1);
   return newDate.toLocaleDateString();
-}
+};
 
 let getResultDays = (days, date) => {
   const now = new Date();
@@ -26,16 +26,10 @@ let getResultDays = (days, date) => {
   let resultDays = Math.ceil(count - hours / 24);
 
   if (resultDays <= 0) {
-    return resultDays = 0;
+    return (resultDays = 0);
   } else {
-    return resultDays;
+    return resultDays - 1;
   }
-
-};
-
-const getResultPrice = (price, days) => {
-  const result = (price / days) * resultDays.value;
-  return result;
 };
 
 daysCount.addEventListener("change", (evt) => {
@@ -43,19 +37,24 @@ daysCount.addEventListener("change", (evt) => {
   resultDaysCount.innerText = 0;
 });
 
-
-form.addEventListener('submit', (evt) => {
+form.addEventListener("submit", (evt) => {
   evt.preventDefault();
   resultDate.innerText = getResultDate();
   resultDaysCount.innerText = getResultDays(
     daysCount.value,
     new Date(formDate.value)
   );
+
   resultVisitsCount.innerText = visitsCount.value - countUsedVisits.value;
-  result.innerText =
-    (formPrice.value / daysCount.value) *
-    getResultDays(daysCount.value, new Date(formDate.value));
 
+  const visitPrice =
+    (formPrice.value / visitsCount.value) *
+    (visitsCount.value - countUsedVisits.value);
+  const price = (formPrice.value / daysCount.value) * resultDaysCount.value;
 
-  console.log(getResultPrice(formPrice.value, daysCount.value));
+  if (visitPrice > price) {
+    result.innerText = price;
+  } else {
+    result.innerText = visitPrice;
+  }
 });
